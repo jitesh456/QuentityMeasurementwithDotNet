@@ -2,38 +2,34 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-using System;
-
 namespace QuantityMeasurement
 {
+    using System;
+
     /// <summary>
     /// Class For QuantityMeasurment.
     /// </summary>
     public class QuantityMeasurement
     {
-        private readonly int feet;
-        private readonly int inch;
+        private readonly Unit unit;
+        private int quantity;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuantityMeasurement"/> class.
         /// This is for initializing quantity value.
         /// </summary>
-        /// <param name="feet"> this store feet Value</param>
-        public QuantityMeasurement(int feet, int inch)
+        /// <param name="unit"> this store type of unit.</param>
+        /// /// <param name="quantity"> this store quantityValue.</param>
+        public QuantityMeasurement(Unit unit, int quantity)
         {
-            this.feet = feet;
-            this.inch = inch;
+            this.unit = unit;
+            this.quantity = quantity;
         }
 
         /// <summary>
         /// Gets function return feet value.
         /// </summary>
-        public int Feet => this.feet;
-
-        /// <summary>
-        /// Gets function return inche value.
-        /// </summary>
-        public int Inch => this.inch;
+        public int Quantity => this.quantity *= (int)this.unit;
 
         /// <summary>
         /// This method is used for checking Equality.
@@ -61,7 +57,7 @@ namespace QuantityMeasurement
         /// <returns>return int value</returns>
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.feet, this.Feet);
+            return HashCode.Combine(this.quantity, this.Quantity);
         }
     }
 }

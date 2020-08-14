@@ -23,9 +23,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenFeetValueAsZero_WhenEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(0, 0);
-            this.quantityMeasurement2 = new QuantityMeasurement(0, 0);
-            Assert.AreEqual(this.quantityMeasurement.Feet, this.quantityMeasurement2.Feet);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 0);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 0);
+            Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
         /// <summary>
@@ -75,10 +75,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenInchValueZero_WhenTypeNotEqual_ShouldReturnFalse()
         {
-            this.quantityMeasurement = new QuantityMeasurement(0, 0);
-            this.quantityMeasurement2 = new QuantityMeasurement(0, 0);
-            Assert.AreEqual(this.quantityMeasurement.Inch, this.quantityMeasurement2.Inch);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 0);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 0);
+            Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
     }
-
 }
