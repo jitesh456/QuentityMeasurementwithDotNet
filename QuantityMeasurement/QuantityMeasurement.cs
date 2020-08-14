@@ -29,7 +29,8 @@ namespace QuantityMeasurement
         /// <summary>
         /// Gets function return feet value.
         /// </summary>
-        public int Quantity => this.quantity *= (int)this.unit;
+        public int Quantity => this.quantity = Convert.ToInt32(
+            this.quantity * this.unit.Value);
 
         /// <summary>
         /// This method is used for checking Equality.

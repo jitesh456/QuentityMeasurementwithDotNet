@@ -23,8 +23,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenFeetValueAsZero_WhenEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 0);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 0);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Feet, 0);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Feet, 0);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -75,8 +75,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenInchValueZero_WhenTypeNotEqual_ShouldReturnFalse()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 0);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 0);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 0);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Inch, 0);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -84,10 +84,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 feet is equal to 1 inch.
         /// </summary>
         [Test]
-        public void GivenFeetValueAs1AndInchAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsOneAndInchAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Feet, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Inch, 1);
             Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -95,10 +95,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 Inch is equal to 1 feet.
         /// </summary>
         [Test]
-        public void GivenInchValueAs1AndFeetAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsOneAndFeetAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Feet, 1);
             Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -106,10 +106,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 12 Inch is equal to 1 feet.
         /// </summary>
         [Test]
-        public void GivenInchValueAs12AndFeetAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsTwelveAndFeetAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 12);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 12);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Feet, 1);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -117,10 +117,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 feet is equal to 12 inch.
         /// </summary>
         [Test]
-        public void GivenFeetValueAs1AndInchAs12_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsOneAndInchAsTwelve_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 12);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Feet, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Inch, 12);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -128,10 +128,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 3 feet is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenFeetValueAs3AndYardAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsThreeAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 3);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.YARD, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Feet, 3);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Yard, 1);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -139,10 +139,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 feet is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenFeetValueAs1AndYardAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsOneAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.YARD, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Feet, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Yard, 1);
             Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -150,10 +150,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 inch is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenInchValueAs1AndYardAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsOneAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.YARD, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Yard, 1);
             Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -161,10 +161,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 yard is equal to 36 Yard.
         /// </summary>
         [Test]
-        public void GivenYardValueAs1AndInchAs36_WhenNotEqual_ShouldReturnTrue()
+        public void GivenYardValueAsOneAndInchAsThirtySix_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.YARD, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 36);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Yard, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Inch, 36);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -172,10 +172,10 @@ namespace QuantityMeasurmentTest
         /// Testing if 36 Inch  is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenInchValueAs36AndYardAs1_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsThirtySixAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 36);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.YARD, 1);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 36);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Yard, 1);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
 
@@ -183,10 +183,21 @@ namespace QuantityMeasurmentTest
         /// Testing if 1 Yard  is equal to 3 Feet.
         /// </summary>
         [Test]
-        public void GivenYardValueAs1AndFeetAs3_WhenNotEqual_ShouldReturnTrue()
+        public void GivenYardValueAsOneAndFeetAsThree_WhenNotEqual_ShouldReturnTrue()
         {
-            this.quantityMeasurement = new QuantityMeasurement(Unit.YARD, 1);
-            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 3);
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Yard, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Feet, 3);
+            Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
+        }
+
+        /// <summary>
+        /// Testing if 1 Yard  is equal to 3 Feet.
+        /// </summary>
+        [Test]
+        public void GivenInchValueAsTwoAndFeetCentimeterAsFive_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement = new QuantityMeasurement(Unit.Inch, 5);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.Centimeter, 2);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
     }
