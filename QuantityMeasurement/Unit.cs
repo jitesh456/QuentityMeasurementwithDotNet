@@ -21,6 +21,6 @@ namespace QuantityMeasurement
         /// <summary>
         /// This is for Length Feet Type
         /// </summary>
-        INCH = 0,
+        INCH = 1,
     }
 }

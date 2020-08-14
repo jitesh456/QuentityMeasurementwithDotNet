@@ -79,5 +79,49 @@ namespace QuantityMeasurmentTest
             this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 0);
             Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
         }
+
+        /// <summary>
+        /// Testing if 1 feet is equal to 1 inch.
+        /// </summary>
+        [Test]
+        public void GivenFeetValueAs1AndInchAs1_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 1);
+            Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
+        }
+
+        /// <summary>
+        /// Testing if 1 Inch is equal to 1 feet.
+        /// </summary>
+        [Test]
+        public void GivenInchValueAs1AndFeetAs1_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 1);
+            Assert.AreNotEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
+        }
+
+        /// <summary>
+        /// Testing if 12 Inch is equal to 1 feet.
+        /// </summary>
+        [Test]
+        public void GivenInchValueAs12AndFeetAs1_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement = new QuantityMeasurement(Unit.INCH, 12);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.FEET, 1);
+            Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
+        }
+
+        /// <summary>
+        /// Testing if 1 feet is equal to 12 inch.
+        /// </summary>
+        [Test]
+        public void GivenFeetValueAs1AndInchAs12_WhenNotEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement = new QuantityMeasurement(Unit.FEET, 1);
+            this.quantityMeasurement2 = new QuantityMeasurement(Unit.INCH, 12);
+            Assert.AreEqual(this.quantityMeasurement.Quantity, this.quantityMeasurement2.Quantity);
+        }
     }
 }
