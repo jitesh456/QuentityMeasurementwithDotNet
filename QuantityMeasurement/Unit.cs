@@ -14,13 +14,18 @@ namespace QuantityMeasurement
     public enum Unit
     {
         /// <summary>
-        /// This is for Length Unit Type
+        /// This is for Length Feet Type.
         /// </summary>
         FEET = 12,
 
         /// <summary>
-        /// This is for Length Feet Type
+        /// This is for Length Inch Type
         /// </summary>
         INCH = 1,
+
+        /// <summary>
+        /// This is for Length Yard Type
+        /// </summary>
+        YARD = 36,
     }
 }
