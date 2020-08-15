@@ -300,5 +300,38 @@ namespace QuantityMeasurmentTest
             .AddQuantity(1, Unit.Liter, 1000, Unit.Yard, null));
             Assert.AreEqual(QuantityMeasurementException.ExceptionType.UNIT_TYPE_MUST_BE_SAME, exception.exceptionType);
         }
+
+        /// <summary>
+        /// Testing if 1 Kilogram as 1000 gram  .
+        /// </summary>
+        [Test]
+        public void GivenOneKillogramAndThousandGram_WhenEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement.GetConvertUnit(Unit.Kilogram, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Gram, 1000);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
+        }
+
+        /// <summary>
+        /// Testing if 1 Tonne as 1000 Kilogram  .
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndThousandKilogram_WhenEqual_ShouldReturnTrue()
+        {
+            this.quantityMeasurement.GetConvertUnit(Unit.Tonne, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Kilogram, 1000);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
+        }
+
+        /// <summary>
+        /// Testing if 1 Tonne as 1000 gram  .
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndThousandgram_WhenCorrect_ShouldReturnAddition()
+        {
+            double result = this.quantityMeasurement.
+                AddQuantity(1, Unit.Tonne, 1000, Unit.Gram, Unit.Kilogram);
+            Assert.AreEqual(1001, result);
+        }
     }
 }

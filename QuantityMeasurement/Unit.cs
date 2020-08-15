@@ -49,6 +49,21 @@ namespace QuantityMeasurementProblemStatement
         public static readonly Unit MiliLeter = new Unit(1, "VOLUME");
 
         /// <summary>
+        /// Gram store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Gram = new Unit(1, "WEIGHT");
+
+        /// <summary>
+        /// Kilogram store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Kilogram = new Unit(1000, "WEIGHT");
+
+        /// <summary>
+        /// Tonne store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Tonne = new Unit(1000000, "WEIGHT");
+
+        /// <summary>
         /// hold value for unit.
         /// </summary>
         public readonly double Value;
