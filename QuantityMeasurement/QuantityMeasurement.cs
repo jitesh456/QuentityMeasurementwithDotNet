@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace QuantityMeasurement
+namespace QuantityMeasurementProblemStatement
 {
     using System;
 
@@ -11,6 +11,15 @@ namespace QuantityMeasurement
     /// </summary>
     public class QuantityMeasurement
     {
+        private readonly Unit unit;
+
+        private double value;
+
+        /// <summary>
+        /// Gets value for returning value.
+        /// </summary>
+        public double Value => this.value;
+
         /// <summary>
         /// This function add two quantity.
         /// </summary>
@@ -18,10 +27,24 @@ namespace QuantityMeasurement
         /// <param name="unit1">contain first unit.</param>
         /// <param name="quantity2">contain second quantity.</param>
         /// <param name="unit2">contain second unit.</param>
+        /// <param name="outputUnit">contain output of unit.</param>
         /// <returns> addition of 2 quantity.</returns>
-        public double AddQuantity(double quantity1, Unit unit1, double quantity2, Unit unit2)
+        public double AddQuantity(double quantity1, Unit unit1, double quantity2, Unit unit2 ,Unit outputUnit)
         {
-            return this.GetConvertUnit(unit1, quantity1) + this.GetConvertUnit(unit2, quantity2);
+            if (!unit1.UnitType.Equals(unit2.UnitType))
+            {
+                throw new QuantityMeasurementException(
+                "Unit tye must be same for addition",
+                QuantityMeasurementException.ExceptionType.UNIT_TYPE_MUST_BE_SAME);
+            }
+
+            double result = this.GetConvertUnit(unit1, quantity1) + this.GetConvertUnit(unit2, quantity2);
+            if (outputUnit != null)
+            {
+                return result = result / outputUnit.Value;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -32,7 +55,9 @@ namespace QuantityMeasurement
         /// <returns>convert quantity.</returns>
         public double GetConvertUnit(Unit unit, double quantity)
         {
-            return quantity = Convert.ToInt32(quantity * unit.Value);
+            quantity = Convert.ToInt32(quantity * unit.Value);
+            this.value = quantity;
+            return quantity;
         }
 
         /// <summary>
@@ -50,6 +75,12 @@ namespace QuantityMeasurement
             if (obj.GetType() != this.GetType())
             {
                 return false;
+            }
+
+            QuantityMeasurement objs = (QuantityMeasurement)obj;
+            if (objs.value.CompareTo(this.value) == 0)
+            {
+                return true;
             }
 
             return base.Equals(obj);

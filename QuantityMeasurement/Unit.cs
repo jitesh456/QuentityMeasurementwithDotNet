@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace QuantityMeasurement
+namespace QuantityMeasurementProblemStatement
 {
     using System;
     using System.Collections.Generic;
@@ -61,11 +61,10 @@ namespace QuantityMeasurement
         /// </summary>
         /// <param name="value"> Contain base value of unit.</param>
         /// <param name="unitType"> Contain unit type.</param>
-        public Unit(double value, string unitType)
+        private Unit(double value, string unitType)
         {
             this.Value = value;
             this.UnitType = unitType;
-
         }
     }
 }

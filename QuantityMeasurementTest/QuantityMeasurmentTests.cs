@@ -4,7 +4,7 @@
 namespace QuantityMeasurmentTest
 {
     using NUnit.Framework;
-    using QuantityMeasurement;
+    using QuantityMeasurementProblemStatement;
 
     /// <summary>
     /// This class is for testing  QuantityMeasurment.
@@ -33,9 +33,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenFeetValueAsZero_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 0);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 0);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Feet, 0);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Feet, 0);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -55,6 +55,7 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenQuantityMeasurementObject_WhenNotEqual_ShouldReturnFalse()
         {
+            this.quantityMeasurement2.GetConvertUnit(Unit.Feet, 12);
             bool result = this.quantityMeasurement.Equals(this.quantityMeasurement2);
             Assert.IsFalse(result);
         }
@@ -84,11 +85,11 @@ namespace QuantityMeasurmentTest
         /// Testing if 0 inch is equal to 0 inch.
         /// </summary>
         [Test]
-        public void GivenInchValueZero_WhenTypeNotEqual_ShouldReturnFalse()
+        public void GivenInchValueZero_WhenEqual_ShouldReturnFalse()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 0);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 0);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 0);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Inch, 0);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -97,53 +98,53 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenFeetValueAsOneAndInchAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 1);
-            Assert.AreNotEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Feet, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Inch, 1);
+            Assert.IsFalse(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 1 Inch is equal to 1 feet.
         /// </summary>
         [Test]
-        public void GivenInchValueAsOneAndFeetAsOne_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsOneAndFeetAsOne_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 1);
-            Assert.AreNotEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Feet, 1);
+            Assert.False(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 12 Inch is equal to 1 feet.
         /// </summary>
         [Test]
-        public void GivenInchValueAsTwelveAndFeetAsOne_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsTwelveAndFeetAsOne_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 12);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 1);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 12);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Feet, 1);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 1 feet is equal to 12 inch.
         /// </summary>
         [Test]
-        public void GivenFeetValueAsOneAndInchAsTwelve_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsOneAndInchAsTwelve_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 12);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Feet, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Inch, 12);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 3 feet is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenFeetValueAsThreeAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
+        public void GivenFeetValueAsThreeAndYardAsOne_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 3);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Feet, 3);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Yard, 1);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -152,9 +153,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenFeetValueAsOneAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            Assert.AreNotEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Feet, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Yard, 1);
+            Assert.IsFalse(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -163,31 +164,31 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenInchValueAsOneAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            Assert.AreNotEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Yard, 1);
+            Assert.IsFalse(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 1 yard is equal to 36 Yard.
         /// </summary>
         [Test]
-        public void GivenYardValueAsOneAndInchAsThirtySix_WhenNotEqual_ShouldReturnTrue()
+        public void GivenYardValueAsOneAndInchAsThirtySix_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 36);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Yard, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Inch, 36);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
         /// Testing if 36 Inch  is equal to 1 Yard.
         /// </summary>
         [Test]
-        public void GivenInchValueAsThirtySixAndYardAsOne_WhenNotEqual_ShouldReturnTrue()
+        public void GivenInchValueAsThirtySixAndYardAsOne_WhenEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 36);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 36);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Yard, 1);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -196,9 +197,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenYardValueAsOneAndFeetAsThree_WhenNotEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Yard, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Feet, 3);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Yard, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Feet, 3);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -207,9 +208,9 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenInchValueAsTwoAndFeetCentimeterAsFive_WhenNotEqual_ShouldReturnTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 5);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Centimeter, 2);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Inch, 5);
+            this.quantityMeasurement2.GetConvertUnit(Unit.Centimeter, 2);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -218,7 +219,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenTwoInchAndTwoInch_WhenCorrect_ShouldReturnAddition()
         {
-            double expectedResult = this.quantityMeasurement.AddQuantity(2, Unit.Inch, 2, Unit.Inch);
+            double expectedResult = this.quantityMeasurement.
+                AddQuantity(2, Unit.Inch, 2, Unit.Inch, null);
             Assert.AreEqual(4, expectedResult);
         }
 
@@ -228,7 +230,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenOneFeetAndTwoInch_WhenCorrect_ShouldReturnAddition()
         {
-            double expectedResult = this.quantityMeasurement.AddQuantity(1, Unit.Feet, 2, Unit.Inch);
+            double expectedResult = this.quantityMeasurement.
+                AddQuantity(1, Unit.Feet, 2, Unit.Inch, null);
             Assert.AreEqual(14, expectedResult);
         }
 
@@ -238,7 +241,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenOneFeetAndOneFeet_WhenCorrect_ShouldReturnAddition()
         {
-            double expectedResult = this.quantityMeasurement.AddQuantity(1, Unit.Feet, 1, Unit.Feet);
+            double expectedResult = this.quantityMeasurement.
+                AddQuantity(1, Unit.Feet, 1, Unit.Feet, null);
             Assert.AreEqual(24, expectedResult);
         }
 
@@ -248,7 +252,8 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenTwoInchAndTwoPointFiveCentimeter_WhenCorrect_ShouldReturnAddition()
         {
-            double expectedResult = this.quantityMeasurement.AddQuantity(2, Unit.Inch, 2.5, Unit.Centimeter);
+            double expectedResult = this.quantityMeasurement.
+                AddQuantity(2, Unit.Inch, 2.5, Unit.Centimeter, null);
             Assert.AreEqual(8, expectedResult);
         }
 
@@ -256,11 +261,11 @@ namespace QuantityMeasurmentTest
         /// Testing if 1000 ml is equal 1 liter .
         /// </summary>
         [Test]
-        public void GivenOneLiterAndThousandMiliLiter_WhenCorrect_ShouldReturnAddition()
+        public void GivenOneLiterAndThousandMiliLiter_WhenEqual_ShouldTrue()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 5);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Centimeter, 2);
-            Assert.AreEqual(result1, result2);
+            this.quantityMeasurement.GetConvertUnit(Unit.Liter, 1);
+            this.quantityMeasurement2.GetConvertUnit(Unit.MiliLeter, 1000);
+            Assert.IsTrue(this.quantityMeasurement.Equals(this.quantityMeasurement2));
         }
 
         /// <summary>
@@ -269,9 +274,31 @@ namespace QuantityMeasurmentTest
         [Test]
         public void GivenOneGallonAndThreePointEighyLiter_WhenCorrect_ShouldReturnAddition()
         {
-            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Gallon, 1);
-            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Liter, 3.78);
-            Assert.AreEqual(result1, result2);
+            double result = this.quantityMeasurement.
+                AddQuantity(1, Unit.Gallon, 3.78, Unit.Liter, Unit.Liter);
+            Assert.AreEqual(7.56, result);
+        }
+
+        /// <summary>
+        /// Testing if 1 Liter as 1000 mililiter .
+        /// </summary>
+        [Test]
+        public void GivenOneLiterAndThousandMiliLiter_WhenCorrect_ShouldReturnAddition()
+        {
+            double result = this.quantityMeasurement.
+                AddQuantity(1, Unit.Liter, 1000, Unit.MiliLeter, null);
+            Assert.AreEqual(2000, result);
+        }
+
+        /// <summary>
+        /// Testing if 1 Liter as 1000 yard  .
+        /// </summary>
+        [Test]
+        public void GivenOneLiterAndThousandYard_WhenUnitTypeDifferent_ShouldReturnProperException()
+        {
+            var exception = Assert.Throws<QuantityMeasurementException>(() => this.quantityMeasurement
+            .AddQuantity(1, Unit.Liter, 1000, Unit.Yard, null));
+            Assert.AreEqual(QuantityMeasurementException.ExceptionType.UNIT_TYPE_MUST_BE_SAME, exception.exceptionType);
         }
     }
 }
