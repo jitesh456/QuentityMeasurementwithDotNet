@@ -11,26 +11,29 @@ namespace QuantityMeasurement
     /// </summary>
     public class QuantityMeasurement
     {
-        private readonly Unit unit;
-        private int quantity;
-
         /// <summary>
-        /// Initializes a new instance of the <see cref="QuantityMeasurement"/> class.
-        /// This is for initializing quantity value.
+        /// This function add two quantity.
         /// </summary>
-        /// <param name="unit"> this store type of unit.</param>
-        /// /// <param name="quantity"> this store quantityValue.</param>
-        public QuantityMeasurement(Unit unit, int quantity)
+        /// <param name="quantity1">contain first quantity.</param>
+        /// <param name="unit1">contain first unit.</param>
+        /// <param name="quantity2">contain second quantity.</param>
+        /// <param name="unit2">contain second unit.</param>
+        /// <returns> addition of 2 quantity.</returns>
+        public double AddQuantity(double quantity1, Unit unit1, double quantity2, Unit unit2)
         {
-            this.unit = unit;
-            this.quantity = quantity;
+            return this.GetConvertUnit(unit1, quantity1) + this.GetConvertUnit(unit2, quantity2);
         }
 
         /// <summary>
-        /// Gets function return feet value.
+        /// This function convert quantity.
         /// </summary>
-        public int Quantity => this.quantity = Convert.ToInt32(
-            this.quantity * this.unit.Value);
+        /// <param name="unit"> this param store unit.</param>
+        /// <param name="quantity">this is for storing quantity.</param>
+        /// <returns>convert quantity.</returns>
+        public double GetConvertUnit(Unit unit, double quantity)
+        {
+            return quantity = Convert.ToInt32(quantity * unit.Value);
+        }
 
         /// <summary>
         /// This method is used for checking Equality.
@@ -53,12 +56,12 @@ namespace QuantityMeasurement
         }
 
         /// <summary>
-        /// For checking hansh code.
+        /// This mehod return hash code.
         /// </summary>
-        /// <returns>return int value</returns>
+        /// <returns> hashcode.</returns>
         public override int GetHashCode()
         {
-            return HashCode.Combine(this.quantity, this.Quantity);
+            return base.GetHashCode();
         }
     }
 }

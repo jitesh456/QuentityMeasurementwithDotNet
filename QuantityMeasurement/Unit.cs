@@ -42,7 +42,7 @@ namespace QuantityMeasurement
         /// Initializes a new instance of the <see cref="Unit"/> class.
         /// Initialize base unit here.
         /// </summary>
-        /// <param name="value"> Contain base value of unit</param>
+        /// <param name="value"> Contain base value of unit.</param>
         public Unit(double value)
         {
             this.Value = value;
