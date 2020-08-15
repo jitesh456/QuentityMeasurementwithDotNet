@@ -251,5 +251,27 @@ namespace QuantityMeasurmentTest
             double expectedResult = this.quantityMeasurement.AddQuantity(2, Unit.Inch, 2.5, Unit.Centimeter);
             Assert.AreEqual(8, expectedResult);
         }
+
+        /// <summary>
+        /// Testing if 1000 ml is equal 1 liter .
+        /// </summary>
+        [Test]
+        public void GivenOneLiterAndThousandMiliLiter_WhenCorrect_ShouldReturnAddition()
+        {
+            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Inch, 5);
+            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Centimeter, 2);
+            Assert.AreEqual(result1, result2);
+        }
+
+        /// <summary>
+        /// Testing if one Gallon as 3.78 liter .
+        /// </summary>
+        [Test]
+        public void GivenOneGallonAndThreePointEighyLiter_WhenCorrect_ShouldReturnAddition()
+        {
+            double result1 = new QuantityMeasurement().GetConvertUnit(Unit.Gallon, 1);
+            double result2 = new QuantityMeasurement().GetConvertUnit(Unit.Liter, 3.78);
+            Assert.AreEqual(result1, result2);
+        }
     }
 }

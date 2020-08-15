@@ -14,38 +14,58 @@ namespace QuantityMeasurement
     public class Unit
     {
         /// <summary>
-        /// This is for Length Feet Type.
+        /// Feet store it,s unit Type and base unit value.
         /// </summary>
-        public static readonly Unit Feet = new Unit(12.0);
+        public static readonly Unit Feet = new Unit(12.0, "LENGTH");
 
         /// <summary>
-        /// This is for Length Inch Type.
+        /// Inch store it,s unit Type and base unit value.
         /// </summary>
-        public static readonly Unit Inch = new Unit(1.0);
+        public static readonly Unit Inch = new Unit(1.0, "LENGTH");
 
         /// <summary>
-        /// This is for Length Yard Type.
+        /// Yard store it,s unit Type and base unit value.
         /// </summary>
-        public static readonly Unit Yard = new Unit(36.0);
+        public static readonly Unit Yard = new Unit(36.0, "LENGTH");
 
         /// <summary>
-        /// This is for Length Centimeter Type.
+        /// centimeter store it,s unit Type and base unit value.
         /// </summary>
-        public static readonly Unit Centimeter = new Unit(2.5);
+        public static readonly Unit Centimeter = new Unit(2.5, "LENGTH");
+
+        /// <summary>
+        /// Liter store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Liter = new Unit(1000, "VOLUME");
+
+        /// <summary>
+        /// Gallon store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Gallon = new Unit(3780, "VOLUME");
+
+        /// <summary>
+        /// Millimeter store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit MiliLeter = new Unit(1, "VOLUME");
 
         /// <summary>
         /// hold value for unit.
         /// </summary>
         public readonly double Value;
 
+        public readonly string UnitType;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Unit"/> class.
         /// Initialize base unit here.
         /// </summary>
         /// <param name="value"> Contain base value of unit.</param>
-        public Unit(double value)
+        /// <param name="unitType"> Contain unit type.</param>
+        public Unit(double value, string unitType)
         {
             this.Value = value;
+            this.UnitType = unitType;
+
         }
     }
 }
