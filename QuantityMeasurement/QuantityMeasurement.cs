@@ -63,7 +63,7 @@ namespace QuantityMeasurementProblemStatement
         /// <summary>
         /// This method is used for checking Equality.
         /// </summary>
-        /// <param name="obj"> referance of Quantity Measurment</param>
+        /// <param name="obj"> referance of Quantity Measurment.</param>
         /// <returns> true or false.</returns>
         public override bool Equals(object obj)
         {
@@ -84,6 +84,18 @@ namespace QuantityMeasurementProblemStatement
             }
 
             return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// This function is for converting temprature.
+        /// </summary>
+        /// <param name="quantity">Is value which we need to convert. </param>
+        /// <param name="unit"> is unit in which quentitiy is convert.</param>
+        /// <returns> converted value.</returns>
+        public double ConvertTemperature(double quantity, Unit unit)
+        {
+            this.value = Unit.Fahrenheit.Equals(unit) ? (((quantity - 32) * unit.Value) + 10) : (quantity * unit.Value) + 32;
+            return this.value;
         }
 
         /// <summary>

@@ -330,8 +330,48 @@ namespace QuantityMeasurmentTest
         public void GivenOneTonneAndThousandgram_WhenCorrect_ShouldReturnAddition()
         {
             double result = this.quantityMeasurement.
-                AddQuantity(1, Unit.Tonne, 1000, Unit.Gram, Unit.Kilogram);
+            AddQuantity(1, Unit.Tonne, 1000, Unit.Gram, Unit.Kilogram);
             Assert.AreEqual(1001, result);
+        }
+
+        /// <summary>
+        /// Testing if 212 Fahrenheit and 100 celsius.
+        /// </summary>
+        [Test]
+        public void GivenHundredCelsius_WhenCorrect_ShouldReturnTrue()
+        {
+            double result = this.quantityMeasurement2.ConvertTemperature(100, Unit.Celsius);
+            Assert.AreEqual(212, result);
+        }
+
+        /// <summary>
+        /// Testing if 210 Fahrenheit and 200 celsius.
+        /// </summary>
+        [Test]
+        public void GivenTwoHundredCelsius_WhenCorrect_ShouldReturnTrue()
+        {
+            double result = this.quantityMeasurement.ConvertTemperature(200, Unit.Celsius);
+            Assert.AreNotEqual(212, result);
+        }
+
+        /// <summary>
+        /// Testing if 212 Fahrenheit and 100 celsius.
+        /// </summary>
+        [Test]
+        public void GivenTwoHundredAndTwelveFahrenheit_WhenCorrect_ShouldReturnTrue()
+        {
+            double result = this.quantityMeasurement2.ConvertTemperature(212, Unit.Fahrenheit);
+            Assert.AreEqual(100, result);
+        }
+
+        /// <summary>
+        /// Testing if 200 Fahrenheit and 100 celsius.
+        /// </summary>
+        [Test]
+        public void GivenTwoHundredFahrenheit_WhenCorrect_ShouldReturnTrue()
+        {
+            double result = this.quantityMeasurement.ConvertTemperature(200, Unit.Fahrenheit);
+            Assert.AreNotEqual(100, result);
         }
     }
 }

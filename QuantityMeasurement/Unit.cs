@@ -64,8 +64,15 @@ namespace QuantityMeasurementProblemStatement
         public static readonly Unit Tonne = new Unit(1000000, "WEIGHT");
 
         /// <summary>
-        /// hold value for unit.
+        /// Tonne store it,s unit Type and base unit value.
         /// </summary>
+        public static readonly Unit Celsius = new Unit(1.8, "TEMPERATURE");
+
+        /// <summary>
+        /// Tonne store it,s unit Type and base unit value.
+        /// </summary>
+        public static readonly Unit Fahrenheit = new Unit(0.5, "TEMPERATURE");
+
         public readonly double Value;
 
         public readonly string UnitType;
